@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import MetaData from './Layout/Metadata'
 import axios from 'axios'
 const Home = () => {
@@ -8,7 +8,7 @@ const Home = () => {
     const [productsCount, setProductsCount] = useState(0)
 
     const getProducts = async () => {
-        let link = `http://localhost:4001/api/v1/products`
+        let link = `http://localhost:8001/api/v1/products`
         console.log(link)
         let res = await axios.get(link)
         console.log(res)
@@ -18,6 +18,10 @@ const Home = () => {
         setLoading(false)
 
     }
+    useEffect(() => {
+        getProducts()
+    }, [])
+
     return (
         <Fragment>
             <MetaData title={'Buy Best Products Online'} />
