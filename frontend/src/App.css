@@ -172,6 +172,10 @@ footer {
   padding: 0.5rem 2rem;
 }
 
+#review_btn:hover {
+  background-color: #05f715; /* New background color on hover */
+}
+
 #product_seller {
   color: grey;
   font-size: 0.9rem;
